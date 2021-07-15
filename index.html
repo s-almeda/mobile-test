@@ -46,11 +46,12 @@
 
   <body>
     <br>
+
     <div class='container'>
     <button id="permissionBtn">
       Grant Device Permissions
     </button>
-    <a href="ballgame.html"><button>
+    <a href="mobiletest.html"><button>
       Ball Game
     </button></a>
   </div>
@@ -77,7 +78,7 @@
 
         $(document).ready(() => {
 
-          // Request Permission to access 
+          // -- Request Permission to access device orientation (for testing on your mobile phone. Ignore otherwise.) --- // 
          $("#permissionBtn").click(function(){
            console.log("button clicked`")
            if (typeof DeviceOrientationEvent.requestPermission === 'function') {
@@ -92,7 +93,10 @@
       // handle regular non iOS 13+ devices
           }
 
-      }); 
+      });
+
+      //---- End of permissions block ---// 
+
          window.addEventListener('deviceorientation', (event) => {
           $('#beta').text(Math.trunc(event.beta) + ' deg');
         });
