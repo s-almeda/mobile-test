@@ -45,9 +45,16 @@
   </head>
 
   <body>
+    <br>
+    <div class='container'>
     <button id="permissionBtn">
       Grant Device Permissions
     </button>
+    <a href="ballgame.html"><button>
+      Ball Game
+    </button></a>
+  </div>
+
     <div class='container'>
       <div class='grid'>
         <div>
@@ -69,6 +76,8 @@
 
 
         $(document).ready(() => {
+
+          // Request Permission to access 
          $("#permissionBtn").click(function(){
            console.log("button clicked`")
            if (typeof DeviceOrientationEvent.requestPermission === 'function') {
